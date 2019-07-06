@@ -1,0 +1,60 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>JSON + Session Storage Tutorial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <script type="text/javascript" src="js/form.js"></script> 
+</head>
+
+<body>
+    <div class="container">
+        <h4>Enter Data</h4>
+        <form>
+            <div class="form-group">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" placeholder="Enter name" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" placeholder="Enter lastname" id="last_name" name="last_name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Enter Email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="dep">Department</label>
+                <input type="text" class="form-control" placeholder="Enter Department" id="dep" name="dep">
+            </div>
+            <div class="form-group">
+                <label for="upload"></label>
+                <button id="upload">Upload Data</button>
+            </div>
+        </form>
+    </div>
+    </br>
+    </br>
+    </hr>
+    </hr>
+    <div class="container">
+        <h4>Captured Data</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
