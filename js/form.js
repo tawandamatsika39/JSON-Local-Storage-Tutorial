@@ -1,8 +1,9 @@
 var arr = [];
-var data = [];
+var myTableArray=[];
 $(document).ready(function() {
 
     row();
+    
     $("#upload").click(function() {
 
         //retreiving form values
@@ -34,13 +35,40 @@ var row = function() {
             var _email = arr[i].Email;
             var _dep = arr[i].Department;
 
-            var row = "<tr><td>" + (i + 1) + "</td><td>" +
-                first_name + "</td><td>" +
-                last_name + "</td><td>" +
-                _email + "</td><td>" +
+            var row = "<tr><td>" + (i + 1) + "</td><td contenteditable=\"true\" >" +
+                first_name + "</td><td contenteditable=\"true\" >" +
+                last_name + "</td><td contenteditable=\"true\" >" +
+                _email + "</td><td contenteditable=\"true\">" +
                 _dep + "</td></tr>";
 
-            $("tbody").append(row);
+            $("table").append(row);
         }
     }
 };
+
+
+var update =function(){
+	$("table tr").each(function(){
+    	var arrayOfThisRow = [];
+    	var tableData = $(this).find('td');
+    	var obj_=null;
+    	if (tableData.length > 0) {
+        	tableData.each(function() { 
+        		arrayOfThisRow.push($(this).text());
+        	});
+        	obj_={
+        				Name :arrayOfThisRow[1],
+        				LastName:arrayOfThisRow[2],
+        				Email:arrayOfThisRow[3],
+        				Department:arrayOfThisRow[4]
+        	}
+        	myTableArray.push(obj_);
+    	}
+	});
+	localStorage.removeItem(localStorage.tbl); //fix this before sending solution
+
+	localStorage.tbl = JSON.stringify(myTableArray);
+    myTableArray = [];
+}
+
+
